@@ -10,7 +10,7 @@ class App extends Component {
         super(props);
         this.state={
             cars: [
-                {name :'Ford', year : 2018},
+                {name :'BMW', year : 2018},
                 {name :'Audi', year : 2016},
                 {name :'Mazda', year : 2010},
             ],
