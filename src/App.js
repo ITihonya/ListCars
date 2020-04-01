@@ -3,6 +3,7 @@ import './App.scss';
 import Car from './Car/index'
 import React, {Component} from 'react';
 import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
+import Counter from "./Counter/Counter";
 
 class App extends Component {
 
@@ -12,8 +13,8 @@ class App extends Component {
         this.state={
             cars: [
                 {name :'BMW', year : 2018},
-                {name :'GTA', year : 2016},
-                {name :'Mazda', year : 2010},
+                // {name :'GTA', year : 2016},
+                // {name :'Mazda', year : 2010},
             ],
             pageTitle: 'React components',
             showCars: false
@@ -34,7 +35,7 @@ class App extends Component {
         newCars.splice(index,1)
         this.setState({cars : newCars})
     }
-    toggleTitleHandler = () => {
+    toggleCarsHandler = () => {
         this.setState({
             showCars: !this.state.showCars
         })
@@ -78,9 +79,13 @@ class App extends Component {
                 { /*<h1>{this.state.pageTitle}</h1>*/}
                 <h1>{this.props.title}</h1>
 
-                <button className={'AppButton'}
-                    onClick={this.toggleTitleHandler}
-                >Toggle Title</button>
+                <Counter></Counter>
+                <hr/>
+                <button
+                    style={{marginTop : 20}}
+                    className={'AppButton'}
+                    onClick={this.toggleCarsHandler}
+                >Toggle Cars</button>
                 <div style={{
                     width: '400px',
                     margin: 'auto',
