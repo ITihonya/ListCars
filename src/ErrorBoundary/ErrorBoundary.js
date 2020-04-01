@@ -1,4 +1,5 @@
 import React from 'react'
+//сщздаём по дефолту класс
 
 export default class ErrorBoundary extends React.Component{
 
