@@ -1,5 +1,7 @@
 import React from 'react';
-import './Car.scss'
+import './Car.css'
+import classes from './Car.css'
+import widthClass from "../hoc/widthClass";
 //import Radium from 'radium'
 
 /*ЛУЧШЕ ВОТ ТАК ЧЕМ НИЖЕ!!!const Car = props =>{
@@ -38,41 +40,8 @@ import './Car.scss'
     )
 }*/
 class Car extends React.Component{
-
-    componentWillReceiveProps(nextProps, nextContext) {
-        console.log('Car componentWillReceiveProps',nextProps,nextContext)
-    }
-
-    shouldComponentUpdate(nextProps, nextState, nextContext) {
-        console.log('Car shouldComponentUpdate',nextProps,nextState,nextContext)
-        return nextProps.name.trim()!== this.props.name.trim()
-    }
-
-    componentWillUpdate(nextProps, nextState, nextContext) {
-        console.log('Car componentWillUpdate',nextProps,nextState,nextContext)
-    }
-
-    // static getDerivedStateFromProps(nextProps, prevState) {
-    //     console.log('Car getDerivedStateFromProps', nextProps, prevState)
-    //     return prevState
-    // }
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('Car componentDidUpdate',prevProps,prevState,snapshot)
-    }
-
-    // getSnapshotBeforeUpdate(prevProps, prevState) {
-    //     console.log('Car getSnapshotBeforeUpdate')
-    // }
-
-    componentWillUnmount() {
-        console.log('Car componentWillUnmount')
-    }
-
     render (){
-        console.log('Car render')
-        // if(Math.random()> 0.7){
-        //     throw new Error('Car random failed')
-        // }
+
         const inputClasses = ['input']
 
         if(this.props.name !== ''){
@@ -93,8 +62,9 @@ class Car extends React.Component{
                 cursor: 'pointer'
             }
         }
+
         return (
-            <div className="Car" style={style}>
+            <div className={classes.Car} style={style}>
                 <h3>Car name: {this.props.name}</h3>
                 <p>Year: <strong>{this.props.year}</strong></p>
                 <input
