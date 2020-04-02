@@ -6,8 +6,15 @@ export default class Counter extends Component {
        counter: 0
     }
     addCounter = () => {
-        this.setState({
-            counter: this.state.counter + 1
+        // this.setState({
+        //     counter: this.state.counter + 1
+        // })
+
+        //более безопасный подход при защите от асинхронности...когда нам точно нужно использовать первоначальное состояние counter
+        this.setState((prevState) => {
+            return{
+                counter: prevState.counter + 1
+            }
         })
     }
     render() {
