@@ -1,5 +1,5 @@
 //import React from 'react';
-import './App.css';
+import './App.scss';
 import Car from './Car/index'
 import React, {Component} from 'react';
 import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
